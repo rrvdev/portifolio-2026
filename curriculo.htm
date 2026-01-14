@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Ronald Vasconcelos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="index.htm" class="floating-back-arrow no-print" title="Voltar para Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="page-container">
+        <header>
+            <div class="header-top">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Caucaia, CE - Parque Potira.</span>
+                </div>
+                <div class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/ronald-vasconcelos-/" target="_blank">linkedin.com/in/ronald-vasconcelos-/</a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="email">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:vasconcelosronald2014@gmail.com">vasconcelosronald2014@gmail.com</a>
+                </div>
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <span>(85) 98646-0798</span>
+                </div>
+            </div>
+            <div class="header-name">
+                <h1 id="cv-name">Ronald Vasconcelos</h1>
+            </div>
+            
+            <div class="language-switcher no-print">
+                <button class="language-btn active" id="lang-pt">PT</button>
+                <button class="language-btn" id="lang-en">EN</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="cv-section">
+                <h2 class="cv-section-title" id="summary-title">SUMÁRIO</h2>
+                <hr class="divider">
+                <p class="cv-text" id="summary-text">
+                    Profissional de T.I com experiência em infraestrutura, redes e suporte técnico, atuando na manutenção de ambientes, resolução de incidentes e apoio aos usuários. Possuo foco em estabilidade, organização e melhoria contínua, além de interesse em automação de processos com n8n e criação de agents de IA e boas práticas de tecnologia, e também utilizando python, para automatizar tarefas repetitivas e otimizar processos.
+                </p>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title" id="experience-title">EXPERIÊNCIAS</h2>
+                <hr class="divider">
+                
+                <div class="job-item">
+                    <div class="job-header">
+                        <h3 class="job-title" id="job-1-title">Auxiliar de T.I</h3>
+                        <span class="job-date" id="job-1-date">07/2025 - Atual</span>
+                    </div>
+                    <ul class="job-desc">
+                        <li id="job-1-desc">Atuação em suporte técnico presencial e remoto, atendendo colaboradores via helpdesk e resolvendo incidentes de hardware, software e sistemas. Trabalho com infraestrutura de redes (DHCP, DNS, TCP/IP), configuração e suporte a VPNs, administração de usuários no Active Directory e instalação e manutenção de softwares. Também sou responsável por criar e manter automações de tarefas repetitivas, utilizando Python e ferramentas de automação como n8n, contribuindo para maior eficiência e organização dos processos internos.</li>
+                    </ul>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-header">
+                        <h3 class="job-title" id="job-2-title">Estagiário de T.I - Plannea Contabilidade</h3>
+                        <span class="job-date" id="job-2-date">07/2024 - 07/2025</span>
+                    </div>
+                    <ul class="job-desc">
+                        <li id="job-2-desc">Suporte ao colaborador, tanto presencialmente quanto remotamente. Meu dia a dia envolve atender solicitações e resolver problemas diversos, garantindo que todos tenham o suporte necessário para desempenhar suas funções.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title" id="education-title">EDUCAÇÃO</h2>
+                <hr class="divider">
+                <div class="education-item">
+                    <div class="edu-header">
+                        <h3 class="edu-school" id="edu-1-school">Estácio Parangaba</h3>
+                        <span class="edu-date" id="edu-1-date">Jan 2014 - Dez 2027</span>
+                    </div>
+                    <p class="edu-course" id="edu-1-course">Análise e Desenvolvimento de Sistemas - Cursando</p>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title" id="additional-title">ADDITIONAL INFORMATION</h2>
+                <hr class="divider">
+                <ul class="additional-list">
+                    <li><strong id="skills-label">Competências Técnicas:</strong></li>
+                    <li id="skills-text">Suporte técnico (presencial e remoto) · Helpdesk · Infraestrutura de redes · Automação (Python, n8n) · Banco de dados.</li>
+                    
+                    <li class="mt-2"><strong id="tools-label">Ferramentas e Sistemas:</strong></li>
+                    <li id="tools-text">Active Directory · Sistema FORTES · Ambiente Windows</li>
+                    
+                    <li class="mt-2"><strong id="languages-label">Idiomas:</strong></li>
+                    <li id="languages-text">Inglês ( básico/intermediário )</li>
+                </ul>
+            </section>
+        </main>
+        
+        <div class="actions no-print">
+            <a href="index.htm" class="btn-back"><i class="fas fa-arrow-left"></i> <span id="btn-back">Voltar</span></a>
+            <button onclick="window.print()" class="btn-print"><i class="fas fa-print"></i> <span id="btn-print">Imprimir / Salvar PDF</span></button>
+        </div>
+    </div>
+
+    <script src="js/cv.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+:root {
+    --text-color: #333;
+    --text-light: #555;
+    --border-color: #000;
+    --bg-color: #fff;
+    --primary-color: #ff0000; /* Apenas para links/botões */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--bg-color);
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.header-top, .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.header-top div, .header-bottom div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-name h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.cv-section {
+    margin-bottom: 25px;
+}
+
+.cv-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+.cv-text {
+    text-align: justify;
+}
+
+.job-item, .education-item {
+    margin-bottom: 15px;
+}
+
+.job-header, .edu-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.job-desc {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.additional-list {
+    list-style: none;
+}
+
+.additional-list li {
+    margin-bottom: 5px;
+}
+
+.additional-list li.mt-2 {
+    margin-top: 10px;
+}
+
+/* Language Switcher e Actions */
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.language-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.language-btn.active {
+    background: var(--primary-color);
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-back, .btn-print {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.btn-back:hover, .btn-print:hover {
+    background: var(--primary-color);
+}
+
+/* Seta flutuante de voltar */
+.floating-back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-back-arrow:hover {
+    background-color: var(--primary-color);
+    transform: translateX(-3px);
+}
+
+@media print {
+    body {
+        background: #fff;
+        margin: 0;
+    }
+    .page-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    .header-top, .header-bottom {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .job-header, .edu-header {
+        flex-direction: column;
+    }
+}
