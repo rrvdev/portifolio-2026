@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Mail, ArrowUpRight, Database } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaPython, FaGitAlt } from 'react-icons/fa';
 import { SiTypescript, SiReact } from 'react-icons/si';
