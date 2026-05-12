@@ -3,6 +3,7 @@ import { Mail, ArrowUpRight, Database } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaPython, FaGitAlt } from 'react-icons/fa';
 import { SiTypescript, SiReact } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
@@ -132,15 +133,34 @@ const fadeUp: Variants = {
 };
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [lang, setLang] = useState<Lang>('pt');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Sync lang state with URL
+  useEffect(() => {
+    const path = location.pathname.replace('/', '');
+    if (path === 'en') {
+      setLang('en');
+    } else if (path === 'pt' || path === '') {
+      setLang('pt');
+      if (path === '') navigate('/pt', { replace: true });
+    }
+  }, [location.pathname, navigate]);
+
   const t = i18n[lang];
 
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  const changeLang = (newLang: Lang) => {
+    setLang(newLang);
+    navigate(`/${newLang}`);
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -172,8 +192,8 @@ function App() {
             <li><a href="#contact" className="nav-link">{t.nav.contact}</a></li>
             <li>
               <div className="lang-toggle">
-                <button className={`lang-btn ${lang === 'pt' ? 'active' : ''}`} onClick={() => setLang('pt')}>PT</button>
-                <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+                <button className={`lang-btn ${lang === 'pt' ? 'active' : ''}`} onClick={() => changeLang('pt')}>PT</button>
+                <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => changeLang('en')}>EN</button>
               </div>
             </li>
           </ul>
@@ -190,8 +210,8 @@ function App() {
             <a href="#projects" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.nav.projects}</a>
             <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
             <div className="lang-toggle" style={{ alignSelf: 'flex-start' }}>
-              <button className={`lang-btn ${lang === 'pt' ? 'active' : ''}`} onClick={() => setLang('pt')}>PT</button>
-              <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
+              <button className={`lang-btn ${lang === 'pt' ? 'active' : ''}`} onClick={() => changeLang('pt')}>PT</button>
+              <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => changeLang('en')}>EN</button>
             </div>
           </div>
         )}
@@ -221,7 +241,7 @@ function App() {
               className="hero-anim"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.6, delay: 0.15, ease: 'easeInOut' }}
             >
               <DotLottieReact
                 src="https://lottie.host/fcf391c8-4ed3-4127-8883-25f3366adaa1/po8M64O6sL.lottie"
