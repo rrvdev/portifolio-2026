@@ -128,7 +128,7 @@ const skills = [
 // ── Animation Variants ──
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
 };
 
 function App() {
@@ -163,7 +163,7 @@ function App() {
       {/* ── Navbar ── */}
       <nav className="navbar">
         <div className="container navbar-inner">
-          <a href="#" className="logo">ronald.dev</a>
+          <a href="#" className="logo">ronaldv.dev</a>
 
           <ul className="nav-links">
             <li><a href="#about" className="nav-link">{t.nav.about}</a></li>
