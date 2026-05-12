@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Mail, ArrowUpRight, Database } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaPython, FaGitAlt } from 'react-icons/fa';
 import { SiTypescript, SiReact } from 'react-icons/si';
@@ -126,7 +126,7 @@ const skills = [
 ];
 
 // ── Animation Variants ──
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
 };
