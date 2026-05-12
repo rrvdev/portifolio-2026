@@ -29,7 +29,7 @@ const i18n = {
     experience: {
       label: 'CURRÍCULO',
       heading: 'Experiência Profissional',
-      role: 'Assistente de TI - Programação',
+      role: 'Desenvolvedor Junior',
       company: 'Plannea Contabilidade',
       period: 'Desde Janeiro de 2026 – Presente',
       description: 'Responsável por criar automações e soluções contábeis unindo programação e IA. Desenvolvo ferramentas web e desktop com o objetivo principal de aumentar a produtividade do time contábil no geral, eliminando gargalos operacionais e tarefas manuais.',
@@ -78,7 +78,7 @@ const i18n = {
     experience: {
       label: 'RESUME',
       heading: 'Professional Experience',
-      role: 'IT Assistant - Programming',
+      role: 'Junior Developer',
       company: 'Plannea Contabilidade',
       period: 'From January 2026 – Present',
       description: 'Responsible for creating accounting automations and solutions by combining programming and AI. I develop web and desktop tools mainly to increase the accounting team\'s overall productivity, eliminating operational bottlenecks and manual tasks.',
